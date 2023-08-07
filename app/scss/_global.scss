@@ -1,0 +1,128 @@
+html,
+body {
+	height: 100%;
+}
+
+body {
+	@extend %Regular;
+	font-size: 16px;
+	line-height: 30px;
+	color: $textdefault;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+}
+.container {
+	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+.logo__img{
+	width: 70px;
+}
+.main {
+	flex-grow: 1;
+}
+.btn {
+	@extend %Medium;
+	font-size: 17px;
+	line-height: 20.4px;
+	padding: 25px 35px;
+	background-color: $accent;
+	color: #fff;
+	border-radius: 50px;
+}
+.breadcrumbs {
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	&__list {
+		display: flex;
+	}
+	&__item {
+		@extend %Medium;
+		color: #fff;
+		padding-right: 40px;
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			background-image: url("../images/icons/breadcrumbs.svg");
+			width: 9px;
+			height: 10px;
+			right: 15px;
+			top: 10px;
+		}
+		&:last-child {
+			color: $accent;
+			padding-right: 0;
+			&::after {
+				display: none;
+			}
+		}
+	}
+	&__link {
+		color: inherit;
+	}
+}
+.pagination {
+	display: flex;
+	justify-content: center;
+	padding: 30px 0;
+	.pagination__list {
+		display: flex;
+		padding: 0 35px;
+	}
+	&__item {
+		@extend %SemiBold;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 16px;
+		line-height: 28px;
+		margin: 0 15px;
+		min-width: 60px;
+		height: 60px;
+		border-radius: 5px;
+		background-color: $default;
+	}
+	&__link {
+		padding: 15px 25px;
+	}
+	&__item--activ {
+		background: linear-gradient(to right, #ff702a, #cc0e15);
+		color: #fff;
+		.pagination__link--active {
+			color: #fff;
+		}
+	}
+}
+::-webkit-scrollbar-track {
+	background-color: #ecedee;
+}
+
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	background-color: $accent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(0, 0, 0, 0.253);
+}
+
+::-webkit-resizer {
+	width: 4px;
+	height: 0px;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+@media (max-width: 420px) {
+	.pagination {
+		.pagination__list {
+			padding: 0 15px;
+		}
+	}
+}

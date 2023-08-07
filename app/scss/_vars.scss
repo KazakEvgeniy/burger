@@ -1,0 +1,38 @@
+$accent: #ff702a;
+$textdefault: #494442;
+$default: #feeee7;
+
+%checkbox-hidden,
+%radio-hidden {
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	position: absolute;
+}
+
+%Regular {
+	font-family: "Poppins-Regular";
+	font-weight: 400;
+}
+
+%Medium {
+	font-family: "Poppins-Medium";
+	font-weight: 500;
+}
+
+%SemiBold {
+	font-family: "Poppins-SemiBold";
+	font-weight: 600;
+}
+
+%Bold {
+	font-family: "Poppins-Bold";
+	font-weight: 700;
+}
+@function max($numbers...) {
+	@return m#{a}x(#{$numbers});
+}
+@function min($numbers...) {
+	@return m#{i}n(#{$numbers});
+}
